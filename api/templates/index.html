@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.svg') }}">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <title>Task Manager</title>
+  </head>
+  <body>   
+      <h1>Task Manager</h1>
+      <aside class="add-tasks">
+        <h2>Add Task</h2>
+        <form id="task-form" method="POST" action="/add_task">
+          <p>
+            <label for="task">Task:</label>
+            <input type="text" name="task" required />
+          </p>
+          <p>
+            <label for="deadline">Deadline:</label>
+            <input type="date" name="deadline" required />
+          </p>
+          <p>
+            <label for="priority">Priority:</label>
+            <select name="priority" required />
+              <option value="High" >High</option>
+              <option value="Medium">Medium</option>
+              <option value="Low">Low</option>
+            </select>
+          </p>
+          <button type="submit" class="bt-add"><i class="ph ph-plus-circle"></i></button>
+        </form>
+        <p class="task-validation">{{ message }}</p>
+      </aside>
+      <main class="show-tasks">
+        <div class="container-tasks">
+          <div class="priority-high">
+            <h3>High</h3>
+            {% for task in tasks %}
+              {% if task.priority == 'High'%}
+                <p>
+                  <form method="POST" action="/remove_task" style="display: inline;">
+                    <!-- Exibe a tarefa -->
+                    <input type="checkbox" name="task_index"><label class="task-text">{{ task.task }}</label>
+                    <!-- O valor do botão pega o índice da tarefa dentro da lista -->
+                    <button type="submit" class="bt-remove" name="remove_task" value="{{ tasks.index(task) }}"><i class="ph ph-trash"></i></button>
+                    <p class="task-deadline">{{ task.deadline }}</p>
+                  </form>
+                </p>
+              {% endif %}
+            {% endfor %}
+          </div>
+          <div class="priority-medium">
+            <h3>Medium</h3>
+            {% for task in tasks %}
+              {% if task.priority == 'Medium'%}
+                <p>
+                  <form method="POST" action="/remove_task" style="display: inline;">
+                    <!-- Exibe a tarefa -->
+                    <input type="checkbox" name="task_index"><label class="task-text">{{ task.task }}</label>
+                    <!-- O valor do botão pega o índice da tarefa dentro da lista -->
+                    <button type="submit" class="bt-remove" name="remove_task" value="{{ tasks.index(task) }}"><i class="ph ph-trash"></i></button>
+                    <p class="task-deadline">{{ task.deadline }}</p>
+                    </form>
+                </p>
+              {% endif %}
+            {% endfor %}
+          </div>
+          <div class="priority-low">
+            <h3>Low</h3>
+            {% for task in tasks %}
+              {% if task.priority == 'Low'%}
+                <p>
+                  <form method="POST" action="/remove_task" style="display: inline;">
+                    <!-- Exibe a tarefa -->
+                    <input type="checkbox" name="task_index"><label class="task-text">{{ task.task }}</label>
+                    <!-- O valor do botão pega o índice da tarefa dentro da lista -->
+                    <button type="submit" class="bt-remove" name="remove_task" value="{{ tasks.index(task) }}"><i class="ph ph-trash"></i></button>
+                    <p class="task-deadline">{{ task.deadline }}</p>
+                    </form>
+                </p>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      </main>
+      <footer><p>Criado por <a href="https://github.com/saraaniceto" target="_blank">Sara Aniceto</a></p></footer>
+  </body>
+</html>
