@@ -39,15 +39,19 @@
             <h3>High</h3>
             {% for task in tasks %}
               {% if task.priority == 'High'%}
-                <p>
-                  <form method="POST" action="/remove_task" style="display: inline;">
-                    <!-- Exibe a tarefa -->
-                    <input type="checkbox" name="task_index"><label class="task-text">{{ task.task }}</label>
-                    <!-- O valor do botão pega o índice da tarefa dentro da lista -->
-                    <button type="submit" class="bt-remove" name="remove_task" value="{{ tasks.index(task) }}"><i class="ph ph-trash"></i></button>
+                <ul class="task-elements">
+                  <!-- Exibe a tarefa -->
+                  <li>
+                    <form method="POST" action="/check_task" style="display: inline;">
+                      <button type="submit" class="bt-check" name="check" value="{{ tasks.index(task) }}"><i class="{{ 'ph ph-check-circle' if task.done else 'ph ph-circle' }}" id="check"></i><i class="ph ph-check-circle" id="check-hover"></i></button>
+                    </form>
+                    <span class="{{ 'checked' if task.done else 'pending' }}">{{ task.task }}</span>
+                    <form method="POST" action="/remove_task" style="display: inline;">
+                        <button type="submit" class="bt-remove" name="remove" value="{{ tasks.index(task) }}"><i class="ph ph-trash"></i></button>
+                      </form>
                     <p class="task-deadline">{{ task.deadline }}</p>
-                  </form>
-                </p>
+                  </li>
+                </ul>
               {% endif %}
             {% endfor %}
           </div>
@@ -55,15 +59,19 @@
             <h3>Medium</h3>
             {% for task in tasks %}
               {% if task.priority == 'Medium'%}
-                <p>
+              <ul class="task-elements">
+                <!-- Exibe a tarefa -->
+                <li>
+                  <form method="POST" action="/check_task" style="display: inline;">
+                    <button type="submit" class="bt-check" name="check" value="{{ tasks.index(task) }}"><i class="{{ 'ph ph-check-circle' if task.done else 'ph ph-circle' }}" id="check"></i><i class="ph ph-check-circle" id="check-hover"></i></button>
+                  </form>
+                  <span class="{{ 'checked' if task.done else 'pending' }}">{{ task.task }}</span>
                   <form method="POST" action="/remove_task" style="display: inline;">
-                    <!-- Exibe a tarefa -->
-                    <input type="checkbox" name="task_index"><label class="task-text">{{ task.task }}</label>
-                    <!-- O valor do botão pega o índice da tarefa dentro da lista -->
-                    <button type="submit" class="bt-remove" name="remove_task" value="{{ tasks.index(task) }}"><i class="ph ph-trash"></i></button>
-                    <p class="task-deadline">{{ task.deadline }}</p>
+                      <button type="submit" class="bt-remove" name="remove" value="{{ tasks.index(task) }}"><i class="ph ph-trash"></i></button>
                     </form>
-                </p>
+                  <p class="task-deadline">{{ task.deadline }}</p>
+              </li>
+              </ul>
               {% endif %}
             {% endfor %}
           </div>
@@ -71,15 +79,19 @@
             <h3>Low</h3>
             {% for task in tasks %}
               {% if task.priority == 'Low'%}
-                <p>
+              <ul class="task-elements">
+                <!-- Exibe a tarefa -->
+                <li>
+                  <form method="POST" action="/check_task" style="display: inline;">
+                    <button type="submit" class="bt-check" name="check" value="{{ tasks.index(task) }}"><i class="{{ 'ph ph-check-circle' if task.done else 'ph ph-circle' }}" id="check"></i><i class="ph ph-check-circle" id="check-hover"></i></button>
+                  </form>
+                  <span class="{{ 'checked' if task.done else 'pending' }}">{{ task.task }}</span>
                   <form method="POST" action="/remove_task" style="display: inline;">
-                    <!-- Exibe a tarefa -->
-                    <input type="checkbox" name="task_index"><label class="task-text">{{ task.task }}</label>
-                    <!-- O valor do botão pega o índice da tarefa dentro da lista -->
-                    <button type="submit" class="bt-remove" name="remove_task" value="{{ tasks.index(task) }}"><i class="ph ph-trash"></i></button>
-                    <p class="task-deadline">{{ task.deadline }}</p>
+                      <button type="submit" class="bt-remove" name="remove" value="{{ tasks.index(task) }}"><i class="ph ph-trash"></i></button>
                     </form>
-                </p>
+                  <p class="task-deadline">{{ task.deadline }}</p>
+              </li>
+              </ul>
               {% endif %}
             {% endfor %}
           </div>

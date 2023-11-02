@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, url_for
+from flask import Flask, render_template, request, redirect, url_for
 import datetime
 
 app = Flask(__name__)
@@ -18,6 +18,7 @@ def add_task():
         'task': task,
         'deadline': deadline,
         'priority': priority,
+        'done': False
     }
     #Delimita o prazo de acordo com a prioridade
     deadlines = {
@@ -35,20 +36,36 @@ def add_task():
         tasks.append(task_dados)
     else:
         message = 'Aumente a prioridade ou extenda o prazo.'
+
     return render_template('index.html', tasks=tasks, message=message)
+
+@app.route('/check_task', methods=['POST'])
+def check_task():
+    checked_task = int(request.form.get('check'))
+    for i, task in enumerate(tasks):
+        state = tasks[i]['done']
+        if tasks.index(task) == checked_task:         
+            if state == False:
+                tasks[i]['done'] = True
+                print('Task is done')
+            else:
+                tasks[i]['done'] = False
+                print('Task is pending')
+
+    return redirect('/')
 
 @app.route('/remove_task', methods=['POST'])
 def remove_task():
     #Pega o valor do index pelo botão
-    removed_task = int(request.form.get('remove_task'))
-    #
+    removed_task = int(request.form.get('remove'))
     for i, task in enumerate(tasks):
         if tasks.index(task) == removed_task:            
             del tasks[i]
-            print(tasks)
+            print('Task removed')
             break    
 
-    return render_template('index.html', tasks=tasks)
+    return redirect('/')
+
 
 if __name__ == "__main__":
     app.run(debug=True)

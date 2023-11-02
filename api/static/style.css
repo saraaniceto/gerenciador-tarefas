@@ -59,29 +59,24 @@ main {
     grid-row: 2 / 3;
 }
 
-input[type=checkbox] {
-    width:20px; 
-    height:20px;
-    transition: .3s background-color; /* slight transition */
-}  
-
-input[type="checkbox"]:checked  + .task-text{    
-    text-decoration: line-through;
+ul.task-elements li {
+    list-style-type: none;
+    margin-bottom: 10px;
 }
 
-.task-text {
+.pending {
     font-size: 18px;
     font-weight: bold;
 }    
-
-label {
-    padding-left: 5px;
+.checked{
+    font-size: 18px;
+    font-weight: bold;    
+    text-decoration: line-through;
 }
 
 .task-deadline {
     color: rgb(97, 97, 97);
     font-size: 15px;
-    margin-bottom: 10px;
 }
 
 button.bt-add {
@@ -90,8 +85,28 @@ button.bt-add {
     border: none;
 }
 
+button.bt-check {
+    font-size: 30px;
+    background-color: transparent;
+    color:black;
+    border: none;
+    display: inline-flex;
+}
+
+i#check-hover {
+    position: absolute;
+    color: transparent;
+}
+
+i#check-hover:hover {
+    color: black;
+    clip-path: circle(30%);  
+    outline: 5px;
+    cursor: pointer;
+}
+
 button.bt-remove {
-    font-size: 20px;
+    font-size: 30px;
     background-color: transparent;
     color:transparent;
     border: none;
@@ -99,6 +114,8 @@ button.bt-remove {
 
 button.bt-remove:hover {
     color:black;
+    cursor: pointer;
+
 }
 
 div.container-tasks {
