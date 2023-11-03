@@ -15,15 +15,15 @@
         <form id="task-form" method="POST" action="/add_task">
           <p>
             <label for="task">Task:</label>
-            <input type="text" name="task" required />
+            <input type="text" name="task" id="task" required />
           </p>
           <p>
             <label for="deadline">Deadline:</label>
-            <input type="date" name="deadline" required />
+            <input type="date" name="deadline" id="deadline" required />
           </p>
           <p>
             <label for="priority">Priority:</label>
-            <select name="priority" required />
+            <select name="priority" id="priority" required />
               <option value="High" >High</option>
               <option value="Medium">Medium</option>
               <option value="Low">Low</option>
