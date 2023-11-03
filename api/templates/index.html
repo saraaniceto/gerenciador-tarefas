@@ -43,12 +43,12 @@
                   <!-- Exibe a tarefa -->
                   <li>
                     <form method="POST" action="/check_task" style="display: inline;">
-                      <button type="submit" class="bt-check" name="check" value="{{ tasks.index(task) }}"><i class="{{ 'ph ph-check-circle' if task.done else 'ph ph-circle' }}"></i></button>
+                      <button type="submit" class="bt-check" name="check" value="{{ tasks.index(task) }}"><i class="{{ 'ph ph-check-circle' if task.done else 'ph ph-circle' }}"></i><i class="ph ph-check-circle check-hover"></i></button>
                     </form>
                     <span class="{{ 'checked' if task.done else 'pending' }}">{{ task.task }}</span>
                     <form method="POST" action="/remove_task" style="display: inline;">
-                      <button type="submit" class="bt-remove" name="remove" value="{{ tasks.index(task) }}"><i class="ph ph-trash"></i></button>
-                    </form>
+                        <button type="submit" class="bt-remove" name="remove" value="{{ tasks.index(task) }}"><i class="ph ph-trash"></i></button>
+                      </form>
                     <p class="task-deadline">{{ task.deadline }}</p>
                   </li>
                 </ul>
@@ -63,12 +63,12 @@
                 <!-- Exibe a tarefa -->
                 <li>
                   <form method="POST" action="/check_task" style="display: inline;">
-                    <button type="submit" class="bt-check" name="check" value="{{ tasks.index(task) }}"><i class="{{ 'ph ph-check-circle' if task.done else 'ph ph-circle' }}"></i></button>
+                    <button type="submit" class="bt-check" name="check" value="{{ tasks.index(task) }}"><i class="{{ 'ph ph-check-circle' if task.done else 'ph ph-circle' }}"></i><i class="ph ph-check-circle check-hover"></i></button>
                   </form>
                   <span class="{{ 'checked' if task.done else 'pending' }}">{{ task.task }}</span>
                   <form method="POST" action="/remove_task" style="display: inline;">
-                    <button type="submit" class="bt-remove" name="remove" value="{{ tasks.index(task) }}"><i class="ph ph-trash"></i></button>
-                  </form>
+                      <button type="submit" class="bt-remove" name="remove" value="{{ tasks.index(task) }}"><i class="ph ph-trash"></i></button>
+                    </form>
                   <p class="task-deadline">{{ task.deadline }}</p>
               </li>
               </ul>
@@ -83,12 +83,12 @@
                 <!-- Exibe a tarefa -->
                 <li>
                   <form method="POST" action="/check_task" style="display: inline;">
-                    <button type="submit" class="bt-check" name="check" value="{{ tasks.index(task) }}"><i class="{{ 'ph ph-check-circle' if task.done else 'ph ph-circle' }}"></i></button>
+                    <button type="submit" class="bt-check" name="check" value="{{ tasks.index(task) }}"><i class="{{ 'ph ph-check-circle' if task.done else 'ph ph-circle' }}"></i><i class="ph ph-check-circle check-hover"></i></button>
                   </form>
                   <span class="{{ 'checked' if task.done else 'pending' }}">{{ task.task }}</span>
                   <form method="POST" action="/remove_task" style="display: inline;">
-                    <button type="submit" class="bt-remove" name="remove" value="{{ tasks.index(task) }}"><i class="ph ph-trash"></i></button>
-                  </form>
+                      <button type="submit" class="bt-remove" name="remove" value="{{ tasks.index(task) }}"><i class="ph ph-trash"></i></button>
+                    </form>
                   <p class="task-deadline">{{ task.deadline }}</p>
               </li>
               </ul>
