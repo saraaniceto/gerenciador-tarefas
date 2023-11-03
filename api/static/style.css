@@ -59,7 +59,8 @@ main {
     grid-row: 2 / 3;
 }
 
-.task-elements{
+ul.task-elements li {
+    list-style-type: none;
     margin-bottom: 10px;
 }
 
