@@ -93,12 +93,12 @@ button.bt-check {
     display: inline-flex;
 }
 
-i#check-hover {
+i.check-hover {
     position: absolute;
     color: transparent;
 }
 
-i#check-hover:hover {
+i.check-hover:hover {
     color: black;
     clip-path: circle(30%);  
     outline: 5px;
