@@ -47,8 +47,8 @@
                     </form>
                     <span class="{{ 'checked' if task.done else 'pending' }}">{{ task.task }}</span>
                     <form method="POST" action="/remove_task" style="display: inline;">
-                        <button type="submit" class="bt-remove" name="remove" value="{{ tasks.index(task) }}"><i class="ph ph-trash"></i></button>
-                      </form>
+                      <button type="submit" class="bt-remove" name="remove" value="{{ tasks.index(task) }}"><i class="ph ph-trash"></i></button>
+                    </form>
                     <p class="task-deadline">{{ task.deadline }}</p>
                   </li>
                 </ul>
@@ -67,8 +67,8 @@
                   </form>
                   <span class="{{ 'checked' if task.done else 'pending' }}">{{ task.task }}</span>
                   <form method="POST" action="/remove_task" style="display: inline;">
-                      <button type="submit" class="bt-remove" name="remove" value="{{ tasks.index(task) }}"><i class="ph ph-trash"></i></button>
-                    </form>
+                    <button type="submit" class="bt-remove" name="remove" value="{{ tasks.index(task) }}"><i class="ph ph-trash"></i></button>
+                  </form>
                   <p class="task-deadline">{{ task.deadline }}</p>
               </li>
               </ul>
@@ -87,8 +87,8 @@
                   </form>
                   <span class="{{ 'checked' if task.done else 'pending' }}">{{ task.task }}</span>
                   <form method="POST" action="/remove_task" style="display: inline;">
-                      <button type="submit" class="bt-remove" name="remove" value="{{ tasks.index(task) }}"><i class="ph ph-trash"></i></button>
-                    </form>
+                    <button type="submit" class="bt-remove" name="remove" value="{{ tasks.index(task) }}"><i class="ph ph-trash"></i></button>
+                  </form>
                   <p class="task-deadline">{{ task.deadline }}</p>
               </li>
               </ul>

@@ -67,7 +67,8 @@ ul.task-elements li {
 .pending {
     font-size: 18px;
     font-weight: bold;
-}    
+}
+    
 .checked{
     font-size: 18px;
     font-weight: bold;    
