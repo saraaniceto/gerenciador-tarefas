@@ -98,18 +98,6 @@ i.ph-circle, i.ph-check-circle {
     border: none;
 }
 
-i.check-hover {
-    position: absolute;
-    color: transparent;
-}
-
-i.check-hover:hover {
-    color: black;
-    clip-path: circle(30%);  
-    outline: 5px;
-    cursor: pointer;
-}
-
 button.bt-remove {
     font-size: 30px;
     background-color: transparent;
