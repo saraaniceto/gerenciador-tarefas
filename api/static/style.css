@@ -86,11 +86,16 @@ button.bt-add {
 }
 
 button.bt-check {
+    display: inline-flex;
+    background-color: transparent;
+    border: none;
+}
+
+i.ph-circle, i.ph-check-circle {
     font-size: 30px;
     background-color: transparent;
     color:black;
     border: none;
-    display: inline-flex;
 }
 
 i.check-hover {
