@@ -1,11 +1,15 @@
 ﻿# Task Manager
 Aplicação de gerenciamento de tarefas criada como trabalho de conclusão da Formação MATCH!, uma parceria da Mastertech com a IBM.
-- [Acesse o projeto finalizado, online](https://task-manager.saraaniceto.vercel.app/)
+- [Acesse o projeto finalizado](https://task-manager.saraaniceto.vercel.app/)*
+  
+ 
   
 <p align="center">
   <img alt="Projeto Discover" src="preview-readme.png" style="width:800px">  
 </p>
-
+<p align="center">
+*Visualização compatível com os navegadores: Google Chrome - Firefox - Opera
+</p>
 
 
 ## :gear: Features:
