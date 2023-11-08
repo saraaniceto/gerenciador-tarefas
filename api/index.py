@@ -6,8 +6,15 @@ app = Flask(__name__)
 tasks = []
 
 @app.route('/')
+def setup():
+    return render_template('setup.html')
+
+@app.route("/board", methods=["POST"])
 def index():
-    return render_template('index.html', tasks=tasks)
+    board = request.form['board']
+    board_title = board.capitalize()
+
+    return render_template('index.html', tasks=tasks, board_title=board_title)
 
 @app.route("/add_task", methods=["POST"])
 def add_task():

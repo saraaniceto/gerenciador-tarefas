@@ -6,10 +6,10 @@
     <link rel="stylesheet" href="../static/style.css">
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.svg') }}">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    <title>Task Manager</title>
+    <title>{{ board_title }} - Task Manager</title>
   </head>
   <body>   
-      <h1>Task Manager</h1>
+      <h1>{{ board_title }}</h1>
       <aside class="add-tasks">
         <h2>Add Task</h2>
         <form id="task-form" method="POST" action="/add_task">
