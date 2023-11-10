@@ -12,7 +12,7 @@ Aplicação de gerenciamento de tarefas criada como trabalho de conclusão da Fo
 </p>
 
 
-## :gear: Features:
+## :gear: Funcionalidades:
 - Adicionar tarefa com prazo marcado
 - Validação de prazo e prioridade
 - Lista de prioridades separadas
@@ -25,3 +25,9 @@ Aplicação de gerenciamento de tarefas criada como trabalho de conclusão da Fo
 - CSS
 - Python
 - Flask
+
+## ➡️ Oportunidades de melhoria:
+- Autenticação de usuário para evitar compartilhamento dos dados
+- Criação de diferentes boards (similar ao Trello)
+- Possibilidade de edição das tarefas
+- Compatibilização com Edge
